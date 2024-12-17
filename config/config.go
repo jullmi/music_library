@@ -28,8 +28,8 @@ func LoadConfig () (*Config) {
 		DBHost: getEnv("DB_HOST", "localhost"),
 		DBPort: getEnv("DB_PORT", "5432"),
 		DBUser: getEnv("DB_USER", "postgres"),
-		DBPassword: getEnv("DB_PASSWORD", ""),
-		DBName: getEnv("DB_NAME", "music_library"),
+		DBPassword: getEnv("DB_PASSWORD", "postgres"),
+		DBName: getEnv("DB_NAME", "music"),
 		APIUrl: getEnv("API_URL", "http://api-music-info"),
 	}
 
