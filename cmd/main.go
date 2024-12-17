@@ -5,6 +5,9 @@ import (
 	"log"
 	"music_library/config"
 	"music_library/database"
+	"music_library/routers"
+	"net/http"
+	"os"
 )
 
 // @title           Music Library API
@@ -32,5 +35,11 @@ func main() {
 	}
 
 	fmt.Println("Application started successfully!")
+
+	router := routers.RegisterRoutes()
+
+	port := os.Getenv("API_PORT")
+	log.Printf("Server is running on port %s...", port)
+	log.Fatal(http.ListenAndServe(":"+port, router))
 
 }
